@@ -1,0 +1,5 @@
+Password for test.p12 is:
+
+jPdfSign
+
+The containing certificate should only be used for testing purposes.
