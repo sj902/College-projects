@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="build_export">
+
+	<loadproperties srcfile="src/strings.properties" />
+
+	<target name="build_export">
+		<jar destfile="${jar-filename}">
+			<fileset dir="bin">
+				<include name="*.class" />
+				<include name="*.properties" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="Jan Peter Stotz" />
+				<attribute name="Main-Class" value="JPdfSign" />
+				<attribute name="Class-Path" value="itext-1.4.jar" />
+				<section name="common">
+					<attribute name="Implementation-Title" value="jPdfSign" />
+					<attribute name="Implementation-Version" value="${productversion} ${TODAY}" />
+					<attribute name="Implementation-Vendor" value="Jan Peter Stotz" />
+				</section>
+			</manifest>
+		</jar>
+		<delete file="jPdfSign_src.zip" />
+		<zip destfile="jPdfSign_src.zip">
+			<fileset dir="./">
+				<include name="src/*.java" />
+				<include name="src/*.properties" />
+				<include name="test/in/*" />
+				<include name="build.xml"/>
+				<include name=".project"/>
+				<include name=".classpath"/>
+				<include name="history.txt"/>
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="Tests" depends="Test_PKCS#12,Test_PKCS#11" />
+
+	<target name="Test_PKCS#12">
+		<mkdir dir="test/out"/>
+		<delete file="test/out/test-signed-p12.pdf" />
+		<java jar="${jar-filename}" fork="true" inputstring="jPdfSign">
+			<arg value="test/in/test.p12" />
+			<arg value="test/in/test.pdf" />
+			<arg value="test/out/test-signed-p12.pdf" />
+		</java>
+	</target>
+
+	<target name="Test_PKCS#11">
+		<mkdir dir="test/out"/>
+		<delete file="test/out/test-signed-p11.pdf" />
+		<!-- only works if the PIN for the PKCS#11-token is "000000" -->
+		<java jar="${jar-filename}" fork="true" inputString="000000">
+			<arg value="-PKCS11" />
+			<arg value="test/in/test.pdf" />
+			<arg value="test/out/test-signed-p11.pdf" />
+		</java>
+	</target>
+</project>

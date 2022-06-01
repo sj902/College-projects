@@ -1,0 +1,12 @@
+Version 0.3a - 2006-08-26
+	Fixed problem with not working PKCS#12 mode.
+	Added a test PKCS#12, PDF and ANT-task for quick testing both modes.
+	
+Version 0.3 - 2006-08-22
+	Renaming of the project to jPdfSign - just to delimit it from other available software named "pdfsign".
+
+Version 0.2 - 2006-08-14
+	Support added for PKCS#11 compatible tokens and signature smartcards.
+	
+Version 0.1 - 2006-05-14
+	Initial Release: PDF documents can be signed by using a certificate from an PKCS#12 file.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="PasswrodHelper/src"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/bcpkix-jdk15on-1.51.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/bcprov-jdk15on-1.51.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/itext-1.4.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/itextpdf-5.4.1.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/jPDFSecure.v2017R1.05.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/lib/sandbox-0.0.5.jar"/>
+	<classpathentry kind="lib" path="PasswrodHelper/dist/PasswrodHelper.jar"/>
+	<classpathentry kind="output" path="PasswrodHelper/build/classes"/>
+</classpath>

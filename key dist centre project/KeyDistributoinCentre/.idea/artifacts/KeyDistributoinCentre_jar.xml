@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KeyDistributoinCentre:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KeyDistributoinCentre_jar</output-path>
+    <root id="archive" name="KeyDistributoinCentre.jar">
+      <element id="module-output" name="KeyDistributoinCentre" />
+    </root>
+  </artifact>
+</component>
